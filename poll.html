@@ -135,15 +135,11 @@
         
         async function deleteIdea(e){
           e.preventDefault();
-          count = 0;
           const ideas = await app.service('ideas').find();
           ideas.forEach((idea)=>{
             console.log(idea);
             app.service('ideas').remove(idea)
           })
-          document.getElementById(
-            'ideas'
-          ).innerHTML = ""
         }
   
         function renderIdea(idea) {
@@ -169,6 +165,13 @@
           } 
           
         }
+
+        function removeIdea(idea){
+          document.getElementById(
+            'ideas'
+          ).innerHTML = ""
+          count = 0;
+        }
   
         async function init() {
           // Find ideas
@@ -180,7 +183,7 @@
           // Add idea in realtime
           app.service('ideas').on('created', renderIdea);
 
-          // app.service('ideas').on('removed', renderIdea);
+          app.service('ideas').on('removed', removeIdea);
         }
   
         init();
