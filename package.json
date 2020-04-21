@@ -1,0 +1,19 @@
+{
+  "name": "realtimeapp",
+  "version": "1.0.0",
+  "description": "Real time polling app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@feathersjs/express": "^4.5.3",
+    "@feathersjs/feathers": "^4.5.3",
+    "@feathersjs/socketio": "^4.5.3",
+    "express": "^4.17.1",
+    "moment": "^2.24.0"
+  }
+}

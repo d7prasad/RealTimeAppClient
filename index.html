@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Real Time Polling</title>
+</head>
+<body class="bg-dark text-white">
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <span class="navbar-brand mb-0 h1">Live Poker Card App</span>
+      </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-7">
+            <h1 class="text-center mb-3">
+              Please Enter your Name below:
+            </h1>
+            <form id="form" action="/poll.html">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name-text"
+                  class="form-control bg-dark text-white"
+                  placeholder="Enter your name (10 chars max)"
+                  maxlength="10"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Continue
+              </button>
+            </form>
+            </div>
+            </div>
+            </div>
+            <script>
+              document.querySelector('#form').addEventListener('submit', ()=>{
+                localStorage.setItem('name', document.getElementById('name-text').value);
+              })
+            </script>
+</body>
+</html>
